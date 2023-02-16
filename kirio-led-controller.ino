@@ -192,7 +192,6 @@ void onLedThree(){
 
 // turn off led three action...
 void offLedThree(){
-  Serial.println("led three off...");
   digitalWrite(led3, LOW); // right wheel forward motion...
   server.send(200, "text/plain", "led three off...");
 }
@@ -201,7 +200,6 @@ void offLedThree(){
 // not found page.
 void handle_notfound() {
   server.send(404, "text/html", "<h1 style=\"color:red; text-align:center; \">\nweb page not available\n <br/> <a href=\"/\">go back home </a> </h1>\n");
-  Serial.println("not found");
 }
 void loop() { // put your code here to run repeatedly:
   server.handleClient();
