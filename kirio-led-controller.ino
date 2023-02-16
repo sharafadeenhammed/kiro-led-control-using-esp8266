@@ -132,10 +132,10 @@ void setup() { // put your code here to run once:
   server.on("/", onConnect);
 
   // action call for front motion of the motor
-  server.on("/onledone", onLEdOne);
+  server.on("/onledone", onLedOne);
   
   // action call for reverse of the motor
-  server.on("/offledone", offLEdOne);
+  server.on("/offledone", offLedOne);
 
   // action call for right turn of th motor
   server.on("/onledtwo", onLedTwo);
@@ -165,7 +165,7 @@ void onConnect() {
 // turn on led one action...
 void onLedOne(){
   Serial.println("led one on...");
-  digitalWrite(led1, HIGH); // trun led one on...
+  digitalWrite(led1, HIGH); // turn led one on...
   server.send(200, "text/plain", "led one on");
 }
 
@@ -192,7 +192,7 @@ void offLedTwo(){
 
 // turn led two on action...
 void onLedThree(){
-  digitalWrite(led3, high); // turn on led three...
+  digitalWrite(led3, HIGH); // turn on led three...
   Serial.println("led three on");
   server.send(200, "text/plain", "led three on...");
 }
