@@ -126,7 +126,6 @@ void setup() { // put your code here to run once:
   digitalWrite(led2, LOW);
   digitalWrite(led3, LOW);
   // digitalWrite(in4, LOW);
-  Serial.println("web server started");
 //  Serial.println(sendText);
   //show landing page(controller page)...
   server.on("/", onConnect);
@@ -159,33 +158,28 @@ void setup() { // put your code here to run once:
 // show lading page (handle on connect)...
 void onConnect() {
   server.send(200, "text/html", pageHtml);
-  Serial.println("home page rendered");
 }
 
 // turn on led one action...
 void onLedOne(){
-  Serial.println("led one on...");
   digitalWrite(led1, HIGH); // turn led one on...
   server.send(200, "text/plain", "led one on");
 }
 
 // turn off led one action...
 void offLedOne(){
-  Serial.println("led one off...");
   digitalWrite(led1, LOW); // turn led one off...
   server.send(200, "text/plain", "led one off");
 }
 
 // turn on led two action...
 void onLedTwo(){
-  Serial.println("led two on...");
   digitalWrite(led2, HIGH); // turn on led two...
   server.send(200, "text/plain", "led two on...");
 }
 
 // turn off led two action...
 void offLedTwo(){
-  Serial.println("led two off...");
   digitalWrite(led2, LOW); // trun off led two...
   server.send(200, "text/plain", "led two off...");
 }
@@ -193,7 +187,6 @@ void offLedTwo(){
 // turn led two on action...
 void onLedThree(){
   digitalWrite(led3, HIGH); // turn on led three...
-  Serial.println("led three on");
   server.send(200, "text/plain", "led three on...");
 }
 
@@ -207,7 +200,6 @@ void offLedThree(){
 
 // not found page.
 void handle_notfound() {
-  Serial.println("invalid request: ");
   server.send(404, "text/html", "<h1 style=\"color:red; text-align:center; \">\nweb page not available\n <br/> <a href=\"/\">go back home </a> </h1>\n");
   Serial.println("not found");
 }
